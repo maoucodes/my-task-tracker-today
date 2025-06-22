@@ -49,8 +49,8 @@ const TodoApp = () => {
   return (
     <div className="max-w-2xl mx-auto p-6">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">Todo App</h1>
-        <p className="text-gray-600">Stay organized and get things done</p>
+        <h1 className="text-4xl font-bold text-white mb-2">Todo App</h1>
+        <p className="text-gray-300">Stay organized and get things done</p>
       </div>
 
       {/* Add Todo Input */}
@@ -61,11 +61,11 @@ const TodoApp = () => {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="What needs to be done?"
-          className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          className="flex-1 px-4 py-3 border border-gray-600 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
         />
         <button
           onClick={addTodo}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center gap-2 font-medium"
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center gap-2 font-medium"
         >
           <Plus size={20} />
           Add
@@ -74,15 +74,15 @@ const TodoApp = () => {
 
       {/* Stats */}
       {totalCount > 0 && (
-        <div className="flex justify-between items-center mb-6 p-4 bg-gray-50 rounded-lg">
-          <span className="text-gray-600">
-            Total: <span className="font-semibold text-gray-800">{totalCount}</span>
+        <div className="flex justify-between items-center mb-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
+          <span className="text-gray-300">
+            Total: <span className="font-semibold text-white">{totalCount}</span>
           </span>
-          <span className="text-gray-600">
-            Completed: <span className="font-semibold text-green-600">{completedCount}</span>
+          <span className="text-gray-300">
+            Completed: <span className="font-semibold text-green-400">{completedCount}</span>
           </span>
-          <span className="text-gray-600">
-            Remaining: <span className="font-semibold text-blue-600">{totalCount - completedCount}</span>
+          <span className="text-gray-300">
+            Remaining: <span className="font-semibold text-blue-400">{totalCount - completedCount}</span>
           </span>
         </div>
       )}
@@ -110,9 +110,9 @@ const TodoApp = () => {
 
       {/* Completed Tasks Section */}
       {completedCount > 0 && (
-        <div className="mt-8 pt-6 border-t border-gray-200">
+        <div className="mt-8 pt-6 border-t border-gray-700">
           <div className="text-center">
-            <span className="text-green-600 font-medium">
+            <span className="text-green-400 font-medium">
               🎉 Great job! You've completed {completedCount} task{completedCount !== 1 ? 's' : ''}
             </span>
           </div>
